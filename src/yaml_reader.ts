@@ -1,33 +1,28 @@
-// Read Yaml -> Pick out keys -> run validation on the content of those keys
-
-import { glob } from "glob";
 import * as YAML from "yaml";
 import { Validator } from "./validator";
 import * as fs from "fs";
 const colors = require("colors/safe");
 
 class YamlReader {
-  input_glob: string;
+  files: Array<string>;
   keys: Array<string>;
 
-  constructor(input_glob: string, keys: Array<string>) {
-    this.input_glob = input_glob;
+  constructor(files: Array<string>, keys: Array<string>) {
+    this.files = files;
     this.keys = keys;
   }
 
   run_lint(validator: Validator) {
     console.log(colors.bold("Running YAML Config Lint: \n"));
-    glob(this.input_glob, (err, filesArr) => {
-      if (err) throw err;
 
-      let errCount = 0;
-      filesArr.forEach((filePath) => {
-        const data = fs.readFileSync(filePath).toString();
+    let errCount = 0;
+    this.files.forEach((filePath) => {
+      const data = fs.readFileSync(filePath).toString();
+      try {
         const yamlData = YAML.parse(data);
-
         this.keys.forEach((key) => {
           let value = yamlData;
-
+  
           let flag = false;
           for (let k of key.split(".")) {
             if (value[k]) {
@@ -38,17 +33,18 @@ class YamlReader {
               break;
             }
           }
-
+  
           if (flag) {
-            if(validator.validate(value.toString(), filePath))
-              errCount += 1;
+            if (validator.validate(value.toString(), filePath)) errCount += 1;
           }
         });
-      });
+      } catch (err) {
+        return
+      }
 
-      if (errCount > 0)
-        process.exit(1);
     });
+
+    if (errCount > 0) process.exit(1);
   }
 }
 

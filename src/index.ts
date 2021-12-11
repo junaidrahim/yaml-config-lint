@@ -8,21 +8,23 @@ class YamlConfigLint extends Command {
   static flags = {
     version: flags.version({ char: "v" }),
     help: flags.help({ char: "h" }),
-    glob: flags.string({
-      char: "f",
-      description: "Input File Prefix",
-      required: true,
-    }),
     keys: flags.string({
       char: "k",
       description: "Comma separated of keys you want to validate",
       required: true,
+      multiple: true
+    }),
+    files: flags.string({
+      char: "f",
+      description: "Input File(s)",
+      required: true,
+      multiple: true,
     }),
   };
 
   async run() {
     const { flags } = this.parse(YamlConfigLint);
-    const yamlReader = new YamlReader(flags.glob, flags.keys.split(","));
+    const yamlReader = new YamlReader(flags.files, flags.keys);
     const jsonValidator = new JSONValidator("");
     yamlReader.run_lint(jsonValidator);
   }
