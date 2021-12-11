@@ -44,7 +44,9 @@ class YamlReader {
 
     });
 
-    if (errCount > 0) process.exit(1);
+    if (errCount > 0) {
+      process.exit(1)
+    }
   }
 }
 

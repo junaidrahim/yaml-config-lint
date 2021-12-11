@@ -3,14 +3,14 @@ import YamlReader from "./yaml_reader";
 import { JSONValidator } from "./validator";
 
 class YamlConfigLint extends Command {
-  static description = "describe the command here";
+  static description = "Lint multiline data inside YAML files";
 
   static flags = {
     version: flags.version({ char: "v" }),
     help: flags.help({ char: "h" }),
     keys: flags.string({
       char: "k",
-      description: "Comma separated of keys you want to validate",
+      description: "Keys you want to validate",
       required: true,
       multiple: true
     }),

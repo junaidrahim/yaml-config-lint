@@ -11,13 +11,14 @@ class JSONValidator implements Validator {
 
   validate(input: string, fileName: string) {
     try {
+      // will add schema based validation here too
       jsonlint.parse(input);
       console.log(`✅ ${colors.yellow("jsonlint successful")}: ${fileName}`);
-      return true;
+      return false;
     } catch (err) {
       console.log(colors.red("jsonlint error in:"), colors.bold(fileName));
       console.log(err.message, "\n");
-      return false;
+      return true;
     }
   }
 }
