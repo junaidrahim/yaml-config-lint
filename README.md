@@ -1,32 +1,24 @@
-yaml-config-lint
-================
+# YAML Config Lint
 
 Lint multiline json config in yaml files
 
-[![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
-[![Version](https://img.shields.io/npm/v/yaml-config-lint.svg)](https://npmjs.org/package/yaml-config-lint)
-[![Downloads/week](https://img.shields.io/npm/dw/yaml-config-lint.svg)](https://npmjs.org/package/yaml-config-lint)
-[![License](https://img.shields.io/npm/l/yaml-config-lint.svg)](https://github.com/junaidrahim/yaml-config-lint/blob/master/package.json)
+## Installation
 
-<!-- toc -->
-* [Usage](#usage)
-* [Commands](#commands)
-<!-- tocstop -->
-# Usage
-<!-- usage -->
-```sh-session
-$ npm install -g yaml-config-lint
-$ ycl COMMAND
-running command...
-$ ycl (-v|--version|version)
-yaml-config-lint/0.0.3 darwin-arm64 node-v16.9.0
-$ ycl --help [COMMAND]
-USAGE
-  $ ycl COMMAND
-...
+```bash
+npm i -g yaml-config-lint
 ```
-<!-- usagestop -->
-# Commands
-<!-- commands -->
 
-<!-- commandsstop -->
+## Usage
+
+```bash
+Lint multiline data inside YAML files
+
+USAGE
+  $ ycl
+
+OPTIONS
+  -f, --files=files  (required) Input File(s)
+  -h, --help         show CLI help
+  -k, --keys=keys    (required) Keys you want to validate
+  -v, --version      show CLI version
+```
