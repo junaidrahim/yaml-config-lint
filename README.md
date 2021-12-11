@@ -9,25 +9,20 @@ Lint multiline json config in yaml files
 [![License](https://img.shields.io/npm/l/yaml-config-lint.svg)](https://github.com/junaidrahim/yaml-config-lint/blob/master/package.json)
 
 <!-- toc -->
-- [yaml-config-lint](#yaml-config-lint)
-- [Usage](#usage)
-- [Commands](#commands)
+* [Usage](#usage)
+* [Commands](#commands)
 <!-- tocstop -->
 # Usage
 <!-- usage -->
 ```sh-session
 $ npm install -g yaml-config-lint
-$ ycl --help
-Lint multiline data inside YAML files
-
+$ ycl COMMAND
+running command...
+$ ycl (-v|--version|version)
+yaml-config-lint/0.0.3 darwin-arm64 node-v16.9.0
+$ ycl --help [COMMAND]
 USAGE
-  $ ycl
-
-OPTIONS
-  -f, --files=files  (required) Input File(s)
-  -h, --help         show CLI help
-  -k, --keys=keys    (required) Keys you want to validate
-  -v, --version      show CLI version
+  $ ycl COMMAND
 ...
 ```
 <!-- usagestop -->

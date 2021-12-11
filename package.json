@@ -1,7 +1,7 @@
 {
   "name": "yaml-config-lint",
   "description": "Lint multiline json config in yaml files",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "author": "Junaid Rahim @junaidrahim",
   "bin": {
     "ycl": "./bin/run"
