@@ -19,7 +19,7 @@ $ npm install -g yaml-config-lint
 $ ycl COMMAND
 running command...
 $ ycl (-v|--version|version)
-yaml-config-lint/0.0.0 darwin-arm64 node-v16.9.0
+yaml-config-lint/0.0.2 darwin-arm64 node-v16.9.0
 $ ycl --help [COMMAND]
 USAGE
   $ ycl COMMAND
