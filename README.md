@@ -4,6 +4,8 @@ Lint multiline json config in yaml files
 
 ## Installation
 
+![npm](https://img.shields.io/npm/v/yaml-config-lint)
+
 ```bash
 npm i -g yaml-config-lint
 ```
